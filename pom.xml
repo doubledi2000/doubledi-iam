@@ -18,13 +18,6 @@
 		<common-version>0.0.1-SNAPSHOT</common-version>
 	</properties>
 	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>com.doubledi</groupId>
 			<artifactId>common-util</artifactId>
@@ -41,6 +34,11 @@
 			<groupId>com.doubledi</groupId>
 			<artifactId>common-model</artifactId>
 			<version>${common-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

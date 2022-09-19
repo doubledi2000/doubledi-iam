@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:80}
+  servlet:
+    context-path: ${SERVICE_PATH:/}
+
+spring:
+  application:
+    name: iam
+  profiles:
+    active: ${ENV:local}
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.Mysql8cDialect
+    hibernate:
+      ddl-auto: update
