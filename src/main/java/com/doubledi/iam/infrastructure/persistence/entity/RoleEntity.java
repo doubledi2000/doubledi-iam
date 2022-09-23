@@ -1,10 +1,13 @@
 package com.doubledi.iam.infrastructure.persistence.entity;
 
 import com.doubledi.common.model.entity.AuditableEntity;
-import com.doubledi.common.model.validator.ValidateConstant;
+import com.doubledi.common.model.validator.ValidateConstraint;
 import com.doubledi.iam.infrastructure.support.enums.RoleLevel;
 import com.doubledi.iam.infrastructure.support.enums.RoleStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -22,32 +25,35 @@ import java.util.Objects;
         @Index(name = "role_deleted_idx", columnList = "deleted")
 })
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RoleEntity extends AuditableEntity {
 
     @Id
-    @Column(name = "id", length = ValidateConstant.LENGTH.ID_MAX_LENGTH, nullable = false)
+    @Column(name = "id", length = ValidateConstraint.LENGTH.ID_MAX_LENGTH, nullable = false)
     private String id;
 
-    @Column(name = "code", length = ValidateConstant.LENGTH.CODE_MAX_LENGTH, nullable = false)
+    @Column(name = "code", length = ValidateConstraint.LENGTH.CODE_MAX_LENGTH, nullable = false)
     private String code;
 
-    @Column(name = "name", length = ValidateConstant.LENGTH.NAME_MAX_LENGTH, nullable = false)
+    @Column(name = "name", length = ValidateConstraint.LENGTH.NAME_MAX_LENGTH, nullable = false)
     private String name;
 
-    @Column(name = "description", length = ValidateConstant.LENGTH.DESC_MAX_LENGTH)
+    @Column(name = "description", length = ValidateConstraint.LENGTH.DESC_MAX_LENGTH)
     private String description;
 
     @Column(name = "is_root", nullable = false)
     private Boolean isRoot;
 
-    @Column(name = "deleted", nullable = false)
+    @Column(name = "deleted")
     private Boolean deleted;
 
-    @Column(name = "status", length = ValidateConstant.LENGTH.ENUM_MAX_LENGTH, nullable = false)
+    @Column(name = "status", length = ValidateConstraint.LENGTH.ENUM_MAX_LENGTH)
     @Enumerated(EnumType.STRING)
     private RoleStatus status;
 
-    @Column(name = "role_level", length = ValidateConstant.LENGTH.ENUM_MAX_LENGTH)
+    @Column(name = "role_level", length = ValidateConstraint.LENGTH.ENUM_MAX_LENGTH)
     @Enumerated(EnumType.STRING)
     private RoleLevel roleLevel;
 

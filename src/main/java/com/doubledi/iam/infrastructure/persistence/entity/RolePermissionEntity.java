@@ -1,8 +1,11 @@
 package com.doubledi.iam.infrastructure.persistence.entity;
 
 import com.doubledi.common.model.entity.AuditableEntity;
-import com.doubledi.common.model.validator.ValidateConstant;
+import com.doubledi.common.model.enums.Property;
+import com.doubledi.common.model.validator.ValidateConstraint;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -21,17 +24,19 @@ import java.util.Objects;
 }
 )
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RolePermissionEntity extends AuditableEntity {
 
     @Id
-    @Column(name = "id", length = ValidateConstant.LENGTH.ID_MAX_LENGTH, nullable = false)
+    @Column(name = "id", length = ValidateConstraint.LENGTH.ID_MAX_LENGTH, nullable = false)
     private String id;
 
-    @Column(name = "property", length = ValidateConstant.LENGTH.ENUM_MAX_LENGTH, nullable = false)
+    @Column(name = "property", length = ValidateConstraint.LENGTH.ENUM_MAX_LENGTH, nullable = false)
     @Enumerated(EnumType.STRING)
-    private String property;
+    private Property property;
 
-    @Column(name = "role_id", length = ValidateConstant.LENGTH.ID_MAX_LENGTH, nullable = false)
+    @Column(name = "role_id", length = ValidateConstraint.LENGTH.ID_MAX_LENGTH, nullable = false)
     private String roleId;
 
     @Column(name = "deleted")
