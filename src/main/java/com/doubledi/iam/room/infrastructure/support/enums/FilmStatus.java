@@ -4,5 +4,5 @@ public enum FilmStatus {
     UNAVAILABLE,
     WAIT_APPROVED,
     APPROVED,
-    STOP_RELEASE
+    STOP_PREMIERE,
 }

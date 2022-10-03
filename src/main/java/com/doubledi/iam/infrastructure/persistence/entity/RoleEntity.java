@@ -57,16 +57,16 @@ public class RoleEntity extends AuditableEntity {
     @Enumerated(EnumType.STRING)
     private RoleLevel roleLevel;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
-        RoleEntity that = (RoleEntity) o;
-        return id != null && Objects.equals(that.id, id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
+//        RoleEntity that = (RoleEntity) o;
+//        return id != null && Objects.equals(that.id, id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hashCode(id);
+//    }
 }

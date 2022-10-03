@@ -76,16 +76,16 @@ public class UserEntity extends AuditableEntity {
     @Column(name = "avatar_file_id", length = ValidateConstraint.LENGTH.ID_MAX_LENGTH)
     private String avatarFileId;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        UserEntity that = (UserEntity) o;
-        return id != null && Objects.equals(id, that.getId());
-    }
-
-    @Override
-    public int hashCode(){
-        return Objects.hashCode(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        UserEntity that = (UserEntity) o;
+//        return id != null && Objects.equals(id, that.getId());
+//    }
+//
+//    @Override
+//    public int hashCode(){
+//        return Objects.hashCode(id);
+//    }
 }

@@ -5,6 +5,7 @@ import com.doubledi.common.model.enums.Property;
 import com.doubledi.common.model.validator.ValidateConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
@@ -41,12 +42,12 @@ public class RolePermissionEntity extends AuditableEntity {
 
     @Column(name = "deleted")
     private Boolean deleted;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (id == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
-        RolePermissionEntity that = (RolePermissionEntity) o;
-        return id != null & Objects.equals(that.getId(), id);
-    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (id == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
+//        RolePermissionEntity that = (RolePermissionEntity) o;
+//        return id != null & Objects.equals(that.getId(), id);
+//    }
 }

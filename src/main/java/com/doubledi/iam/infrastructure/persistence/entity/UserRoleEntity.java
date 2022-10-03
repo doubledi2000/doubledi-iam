@@ -36,16 +36,16 @@ public class UserRoleEntity extends AuditableEntity {
     private Boolean deleted;
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
-        UserRoleEntity that = (UserRoleEntity) o;
-        return o != null && Objects.equals(that.getId(), id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
+//        UserRoleEntity that = (UserRoleEntity) o;
+//        return o != null && Objects.equals(that.getId(), id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hashCode(id);
+//    }
 }

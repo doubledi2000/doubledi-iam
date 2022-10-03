@@ -36,16 +36,16 @@ public class PermissionEntity extends AuditableEntity {
     @Column(name = "deleted", nullable = false)
     private Boolean deleted;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
-        PermissionEntity that = (PermissionEntity) o;
-        return id != null && Objects.equals(that.id, id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(o) != Hibernate.getClass(this)) return false;
+//        PermissionEntity that = (PermissionEntity) o;
+//        return id != null && Objects.equals(that.id, id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hashCode(id);
+//    }
 }
